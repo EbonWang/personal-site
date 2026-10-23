@@ -1,5 +1,5 @@
 @echo off
-cd /d d:\Software\Work\Develop\CodeBuddy\Projects\HOMEPAGE
+cd /d "%~dp0"
 if exist result.txt del result.txt
 if exist cj.txt del cj.txt
 start "wr" /b cmd /c "npx wrangler pages dev dist --port 8788 > wdev.out 2>&1"
