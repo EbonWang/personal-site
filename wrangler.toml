@@ -1,0 +1,16 @@
+name = "personal-site"
+compatibility_date = "2024-10-04"
+pages_build_output_dir = "dist"
+
+# 非敏感变量可直接放在此处；敏感信息请改用 `wrangler secret put` 设置。
+[vars]
+SESSION_SECRET = "dev-only-secret-change-me"
+# 本地默认管理员密码（部署前请通过 `wrangler secret put ADMIN_PASSWORD` 覆盖）
+ADMIN_PASSWORD = "admin12345"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "personal-site-db"
+# 执行 `wrangler d1 create personal-site-db` 后，把返回的 id 填到这里
+database_id = "REPLACE_WITH_YOUR_D1_ID"
+migrations_dir = "migrations"
